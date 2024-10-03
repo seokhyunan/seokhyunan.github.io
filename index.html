@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seokhyun An</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+      background-color: #ffffff; /* Background is now white */
+      color: #000; /* Set all text to black */
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 20px;
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    h1 {
+      margin-top: 0;
+      cursor: pointer; /* Make the name clickable */
+    }
+    /* Tabs styling */
+    .tabs {
+      /* Flexbox handles positioning */
+    }
+    .tabs button {
+      background-color: inherit;
+      border: none;
+      border-bottom: 2px solid transparent; /* Add transparent border */
+      outline: none;
+      cursor: pointer;
+      padding: 10px 12px;
+      font-size: 17px;
+      color: #000;
+      box-shadow: none; /* Ensure no shadow */
+    }
+    .tabs button:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    .tabs button.active {
+      border-bottom-color: #000; /* Change border-bottom color to black */
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    h3 {
+      margin-bottom: 10px;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .links {
+      margin-bottom: 20px;
+    }
+    /* Set all links to black */
+    a {
+      color: #000;
+      text-decoration: underline;
+    }
+    a:visited {
+      color: #000;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      padding-left: 0;
+      margin-top: 5px;
+    }
+    li {
+      margin-left: 15px;
+    }
+    /* Education section styling */
+    .education {
+      display: flex;
+      align-items: flex-start;
+    }
+    .education img {
+      max-width: 100px;
+      margin-right: 15px;
+    }
+    .education-content {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <h1 onclick="openTab(event, 'main')">Seokhyun An</h1>
+        <div class="tabs">
+          <button id="about-tab" class="tab-link" onclick="openTab(event, 'main')">About</button>
+          <button class="tab-link" onclick="openTab(event, 'background')">Background</button>
+          <!-- Removed Teaching tab -->
+        </div>
+      </div>
+      <p>
+        I am an undergraduate student at UNIST, advised by <a href="https://hyounghk.github.io/" target="_blank">Hyounghun Kim</a> and supported by the Korea Presidential Science Scholarship.
+        I am interested in understanding the learning dynamics of language models and scalable methods to improve and align them.
+        <br><br>Email: seokhyun at unist.ac.kr
+        <br>[<a href="https://github.com/seokhyunan" target="_blank">GitHub</a>]
+        [<a href="https://www.linkedin.com/in/iamseokhyun/" target="_blank">LinkedIn</a>]
+        [<a href="https://x.com/seokhyun_an" target="_blank">X</a>]
+      </p>
+    </header>
+
+    <!-- Main Content -->
+    <div id="main" class="tab-content active">
+      <div class="section">
+        <h3>News</h3>
+        <p>No news at the moment.</p>
+      </div>
+      <div class="section">
+        <h3>Publications</h3>
+        <p>No publications yet.</p>
+      </div>
+    </div>
+
+    <!-- Background Tab Content -->
+    <div id="background" class="tab-content">
+      <div class="section">
+        <h3>Education</h3>
+        <div class="education">
+          <img src="unist.png" alt="UNIST Logo">
+          <div class="education-content">
+            <p style="margin-bottom: 5px;"><a href="https://www.unist.ac.kr/" target="_blank"><strong>Ulsan National Institute of Science and Technology (UNIST)</strong></a>
+            <br> Department of Computer Science and Engineering
+            <br> Undergraduate Student
+            <br> GPA: 4.1/4.3
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <h3>Employment</h3>
+        <ul style="margin-top: 0;">
+          <li>
+            <strong>Language and Intelligence Lab, UNIST</strong><br>
+            Research Intern (February 2023 &ndash; Present)<br>
+            Advisor: Professor <a href="https://hyounghk.github.io/" target="_blank">Hyounghun Kim</a>
+          </li>
+          <li>
+            <strong>Intelligent Control and Reasoning Lab, UNIST</strong><br>
+            Research Intern (September 2021 &ndash; February 2023)<br>
+            Advisor: Professor <a href="https://www.sungbin-lim.net/" target="_blank">Sungbin Lim</a>
+          </li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Scholarships</h3>
+        <ul style="margin-top: 0;">
+          <li><strong>Presidential Science Scholarship</strong>, Ministry of Science and ICT, 2024</li>
+          <li><strong>Academic Performance Scholarship</strong>, UNIST, 2021 &ndash; Present </li>
+        </ul>
+        <h3>Awards</h3>
+        <ul style="margin-top: 0;">
+          <li><strong>Gold Medal</strong>, KAIST-POSTECH-UNIST Data Science Competition, 2022</li>
+        </ul>
+      </div>
+      <!-- Moved Teaching Content Here -->
+      <div class="section">
+        <h3>Teaching</h3>
+        <p style="margin-bottom: 5px;">Teaching Assistant for the following courses:</p>
+        <ul style="margin-top: 0;">
+          <li>ITP112: Discrete Mathematics (Fall 2022, 2024)</li>
+          <li>MTH311: Statistics (Fall 2022, Spring 2024)</li>
+          <li>MTH303: Applied Linear Algebra (Spring 2022)</li>
+          <li>ITP107: Introduction to AI Programming I (Spring 2022)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Tabs -->
+  <script>
+    function openTab(evt, tabName) {
+      // Hide all tab content
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+        tabcontent[i].classList.remove("active");
+      }
+
+      // Remove "active" class from all tabs
+      tablinks = document.getElementsByClassName("tab-link");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+
+      // Show the selected tab content
+      document.getElementById(tabName).style.display = "block";
+      document.getElementById(tabName).classList.add("active");
+
+      // Add "active" class to the appropriate tab
+      if (tabName === 'main') {
+        // Add 'active' class to 'About' tab button
+        document.getElementById('about-tab').classList.add('active');
+      } else if (evt.currentTarget.classList.contains('tab-link')) {
+        // Add 'active' class to the clicked tab
+        evt.currentTarget.classList.add("active");
+      }
+    }
+
+    // Show the main content by default
+    document.getElementById('main').style.display = "block";
+  </script>
+</body>
+</html>
