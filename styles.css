@@ -102,3 +102,10 @@ li {
     margin-bottom: 10px;
   }
 }
+
+.korean-name {
+  font-size: 0.5em;       /* Smaller font size relative to the parent */
+  font-weight: normal;    /* Removes bold styling */
+  margin-left: 5px;      /* Adds space between the names */
+  vertical-align: middle; /* Aligns the text vertically with the English name */
+}
