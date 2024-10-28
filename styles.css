@@ -108,4 +108,22 @@ li {
   .education img {
     margin-bottom: 10px;
   }
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  td {
+    white-space: normal !important;
+    word-wrap: break-word;
+    word-break: break-word;
+    padding-right: 10px;
+  }
+  /* Adjust the left cells */
+  table tbody tr td:first-child {
+    text-align: left;
+  }
+  /* Adjust font sizes if needed */
+  h3 {
+    font-size: 18px;
+  }
 }
