@@ -90,8 +90,33 @@ li {
 
 /* Media Query for Mobile Devices */
 @media screen and (max-width: 600px) {
+  /* Make tables responsive */
+  table {
+    width: 100%;
+    table-layout: auto;
+  }
+  /* Adjust table cells */
+  td {
+    padding-right: 10px;
+    vertical-align: top;
+  }
+  /* First column (Year) adjustments */
+  table tbody tr td:first-child {
+    white-space: nowrap;
+    width: 30%;
+    min-width: 70px; /* Ensure enough space for years */
+    text-align: left;
+  }
+  /* Second column adjustments */
+  table tbody tr td:nth-child(2) {
+    white-space: normal;
+  }
+  /* Adjust font sizes if needed */
   h1 {
     font-size: 24px;
+  }
+  h3 {
+    font-size: 18px;
   }
   .tabs a {
     font-size: 14px;
@@ -107,23 +132,5 @@ li {
   }
   .education img {
     margin-bottom: 10px;
-  }
-  table {
-    width: 100%;
-    table-layout: fixed;
-  }
-  td {
-    white-space: normal !important;
-    word-wrap: break-word;
-    word-break: break-word;
-    padding-right: 10px;
-  }
-  /* Adjust the left cells */
-  table tbody tr td:first-child {
-    text-align: left;
-  }
-  /* Adjust font sizes if needed */
-  h3 {
-    font-size: 18px;
   }
 }
