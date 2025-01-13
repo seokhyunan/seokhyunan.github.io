@@ -1,50 +1,46 @@
+/* 1) Font Faces */
+@font-face {
+  font-family: 'Liberation Serif';
+  src: url('fonts/LiberationSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Liberation Serif';
+  src: url('fonts/LiberationSerif-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Liberation Serif';
+  src: url('fonts/LiberationSerif-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Liberation Serif';
+  src: url('fonts/LiberationSerif-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* 2) Base Styles */
+.main-content {
+  flex: 1;
+  display: block; 
+  margin-right: 20px;
+}
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Liberation Serif', serif;
   margin: 20px;
   line-height: 1.6;
   background-color: #ffffff;
   color: #000;
 }
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-header {
-  margin-bottom: 20px;
-}
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px; /* Adjusted for mobile view */
-}
 h1 {
   margin-top: 0;
   cursor: pointer;
-  white-space: nowrap; /* Prevent text wrapping */
-  flex-shrink: 1; /* Allow shrinking */
-}
-/* Allow header items to shrink */
-.header-content h1, .header-content .tabs {
-  flex-shrink: 1;
-}
-/* Navigation Tabs */
-.tabs {
-  display: flex;
-}
-.tabs a {
-  background-color: inherit;
-  border: none;
-  border-bottom: 2px solid transparent;
-  outline: none;
-  cursor: pointer;
-  padding: 10px 12px;
-  font-size: 17px;
-  color: #000;
-  text-decoration: none;
-}
-.tabs a.active {
-  border-bottom-color: #000;
+  white-space: nowrap; 
 }
 h3 {
   margin-bottom: 10px;
@@ -69,7 +65,73 @@ ul {
 li {
   margin-left: 15px;
 }
-/* Education Section */
+
+/* 3) Header + Navigation (Full-Width) */
+header {
+  /* Make the header span the full width of the browser */
+  width: 100%;
+  box-sizing: border-box;
+  /* If you'd like the header background to stand out, you could add:
+     background-color: #f8f8f8; */
+  margin-bottom: 20px;
+  padding: 0;  /* adjust if needed */
+}
+.header-content {
+  /* Spread the nav tabs to the far right */
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  /* Some horizontal padding so the tabs aren’t flush against the window edge */
+  padding: 0 0px;
+}
+.tabs {
+  display: flex;
+}
+.tabs a {
+  background-color: inherit;
+  border: none;
+  border-bottom: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 12px;
+  font-size: 17px;
+  color: #000;
+  text-decoration: none;
+}
+.tabs a.active {
+  border-bottom-color: #000;
+}
+
+/* 4) Two-Column Layout: Sidebar + Main Content */
+.layout {
+  display: block; /* stacked on small screens (mobile) */
+}
+
+/* Sidebar */
+.left-sidebar {
+  font-family: 'Liberation Serif', serif;
+  padding: 30px;
+  background-color: #ffffff;
+  color: #000;
+  line-height: 1.6;
+  margin-bottom: 20px; /* so there's space when stacked on mobile */
+}
+
+.left-sidebar h1 {
+  font-family: "Times New Roman", serif;
+  font-size: 32px;
+  margin-left: 0;
+  text-align: left;
+  font-weight: normal;
+}
+
+/* Main Container (for main content) */
+.container {
+  max-width: 800px; /* so lines don’t get too wide */
+  margin: 0 auto;
+}
+
+/* 5) Education Section, etc. */
 .education {
   display: flex;
   align-items: flex-start;
@@ -82,20 +144,19 @@ li {
   flex: 1;
 }
 .korean-name {
-  font-size: 0.5em;       /* Smaller font size relative to the parent */
-  font-weight: bold;    /* Removes bold styling */
-  margin-left: 0px;      /* Adds space between the names */
-  vertical-align: middle; /* Aligns the text vertically with the English name */
+  font-size: 0.5em;       
+  font-weight: bold;    
+  margin-left: 0px;     
+  vertical-align: middle; 
 }
 
-/* Media Query for Mobile Devices */
-@media screen and (max-width: 600px) {
-  /* Make tables responsive */
+/* 6) Mobile (max-width: 600px) */
+@media screen and (max-width: 660px) {
+  /* Tables become fully fluid */
   table {
     width: 100%;
     table-layout: auto;
   }
-  /* Adjust table cells */
   td {
     padding-right: 10px;
     vertical-align: top;
@@ -104,13 +165,14 @@ li {
   table tbody tr td:first-child {
     white-space: nowrap;
     width: 30%;
-    min-width: 70px; /* Ensure enough space for years */
+    min-width: 70px;
     text-align: left;
   }
   /* Second column adjustments */
   table tbody tr td:nth-child(2) {
     white-space: normal;
   }
+
   /* Adjust font sizes if needed */
   h1 {
     font-size: 24px;
@@ -123,14 +185,47 @@ li {
     padding: 8px 10px;
   }
   .header-content {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    justify-content: left; /* tabs on the left on mobile if desired */
+    padding: 0 0px !important;
   }
-  /* Adjust education section for mobile */
+
+  /* Education images stack */
   .education {
     flex-direction: column;
     align-items: flex-start;
   }
   .education img {
     margin-bottom: 10px;
+  }
+
+  /* Sidebar is stacked above main content */
+  .left-sidebar {
+    position: static;
+    width: auto;
+    margin-bottom: 0px;
+    padding: 0 !important;
+  }
+}
+
+/* 7) Larger Screens (min-width: 601px) */
+@media screen and (min-width: 661px) {
+  /* Turn on flex layout for the two-column design */
+  .layout {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  /* Sidebar: not fixed */
+  .left-sidebar {
+    width: 350px;
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  /* Main container: take remaining space */
+  .container {
+    flex: 1;
+    margin: 0; /* remove auto margin on bigger screens */
   }
 }
